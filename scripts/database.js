@@ -142,6 +142,31 @@ const businesses = [
   ]
 
   export const getCompanies = () => {
-      const copyOfData = businesses.map(item => ({...item}))
-      return copyOfData
+      return [...businesses]
+  }
+
+  // FIND NY
+  const getNYCompanies = (company) => {
+      if (company.addressStateCode === "NY") {
+          return true
+      }
+      return false
+  }
+
+  export const NYCompanies = () => {
+    const filteredItems = businesses.filter(getNYCompanies)
+    return filteredItems
+  }
+
+  // FIND manufacturer
+  const getManufacturer = (company) => {
+      if(company.companyIndustry === "Manufacturing") {
+        return true
+      }
+      return false
+  }
+
+  export const ManufacturerArray = () => {
+    const filterItems = businesses.filter(getManufacturer)
+    return filterItems
   }

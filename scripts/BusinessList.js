@@ -12,4 +12,5 @@ export const BusinessesList = () => {
         (businessObject) => {
         contentTarget.innerHTML += Business(businessObject) 
     });
+
 }
