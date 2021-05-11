@@ -170,3 +170,30 @@ const businesses = [
     const filterItems = businesses.filter(getManufacturer)
     return filterItems
   }
+
+  // GET AGENTS
+  // NEED NEW OBJECT THAT LOOKS LIKE THIS:
+// {
+//     "fullName": "Kaylee Gutkowski",
+//     "company": "Highnix",
+//     "phoneNumber": "235.266.6278"
+// }
+
+export const getNewAgent = () => {
+  const agentArray = []
+  const foundAgent = businesses.find(agentMatch => agentMatch === businesses.purchasingAgent)
+  agentArray.push(foundAgent)
+  const fullNameAgent = foundAgent.map((fullName) => {
+    const fullName = fullName.purchasingAgent
+    return fullName
+  })
+
+  const newAgentObject = agentArray.map((agentObject)=> {
+      return {
+      fullName: agentObject.purchasingAgent,
+      company: agentObject.companyName,
+      phoneNumber: agentObject.phoneWork,
+      }
+  })
+  return newAgentObject
+}
