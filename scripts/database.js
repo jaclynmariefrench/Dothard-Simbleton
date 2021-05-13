@@ -180,19 +180,12 @@ const businesses = [
 // }
 
 export const getNewAgent = () => {
-  const agentArray = []
-  const foundAgent = businesses.find(agentMatch => agentMatch === businesses.purchasingAgent)
-  agentArray.push(foundAgent)
-  const fullNameAgent = foundAgent.map((fullName) => {
-    const fullName = fullName.purchasingAgent
-    return fullName
-  })
-
-  const newAgentObject = agentArray.map((agentObject)=> {
+   
+  const newAgentObject = businesses.map((businessObject)=> {
       return {
-      fullName: agentObject.purchasingAgent,
-      company: agentObject.companyName,
-      phoneNumber: agentObject.phoneWork,
+      fullName: businessObject.purchasingAgent.nameFirst + ' ' + businessObject.purchasingAgent.nameLast,
+      company: businessObject.companyName,
+      phoneNumber: businessObject.phoneWork,
       }
   })
   return newAgentObject

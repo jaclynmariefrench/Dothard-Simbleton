@@ -1,3 +1,4 @@
+import { Agents } from "./agenthtml.js";
 import { getNewAgent } from "./database.js";
 
 const contentTarget = document.querySelector(".agents")
@@ -10,7 +11,7 @@ export const PurchasingAgents = () => {
 
     newAgentObject.forEach(
         (agent) => {
-        contentTarget.innerHTML += AgentList(agent)
+        contentTarget.innerHTML += Agents(agent)
     });
 }
 
