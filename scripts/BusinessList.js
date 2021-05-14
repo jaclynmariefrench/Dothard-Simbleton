@@ -10,7 +10,7 @@ document
                 if (keyPressEvent.charCode === 13) {
                     const searchEntry = keyPressEvent.target.value.toLowerCase()
 
-                    const foundBusiness = businessArray.find(business => business.companyName.toLowerCase().includes(searchEntry))
+                    const foundBusiness = businessArray.find(business => business.companyName.toLowerCase().startsWith(searchEntry))
                     
 
                     companySearchResultArticle.innerHTML = Business(foundBusiness)
